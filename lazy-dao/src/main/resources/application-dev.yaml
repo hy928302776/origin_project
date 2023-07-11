@@ -1,0 +1,43 @@
+
+
+
+spring:
+  #数据库连接
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: goldnet
+    password: goldnet
+    url: jdbc:mysql://192.168.0.152:3308/goldnet_green_finance?useUnicode=true&characterEncoding=utf8&autoReconnect=true&maxReconnects=8
+    #hikari连接池配置
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 15
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: DatebookHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+
+
+
+  
+#mybatis-plus
+mybatis-plus:
+  configuration:
+    #开启驼峰
+    map-underscore-to-camel-case: true
+    #sql输出
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  #mapper.xml位置
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+
+
+
+####logback config
+logging:
+  config: classpath:logback/logback-spring.xml
+  #mapper接口位置
+  logging.level.com.jd.dc.acquisition.dao=debug
+  level:
