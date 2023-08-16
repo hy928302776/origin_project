@@ -47,7 +47,7 @@ public class CodeGenerator {
 
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
-        String projectPath = System.getProperty("user.dir")+"/web"; //web代表子模块
+        String projectPath = System.getProperty("user.dir")+"/lazy-web"; //web代表子模块
         gc.setOutputDir(projectPath + "/src/main/java");
         gc.setAuthor("Mr.Huang");//生成的文件注释的作者
         gc.setOpen(false);

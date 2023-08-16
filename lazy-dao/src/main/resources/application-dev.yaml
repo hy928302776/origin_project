@@ -38,6 +38,6 @@ mybatis-plus:
 ####logback config
 logging:
   config: classpath:logback/logback-spring.xml
-  #mapper接口位置
-  logging.level.com.jd.dc.acquisition.dao=debug
-  level:
+log:
+  level: info
+  home: logs/
